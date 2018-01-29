@@ -1,0 +1,28 @@
+
+<div id="menu-list" (swipe)="menuClose($event)" (tap)="menuCloseByTap()"> <!-- 菜单-->
+  <div class="overlay">
+      <ion-list class="menu-header" style="width:63%">
+        <ion-item>
+            <ion-avatar item-start>
+              <img src="img/j-cole-2016-abg-billboard-1548.png" width="100%">
+            </ion-avatar>
+        </ion-item>
+        <ion-item>
+            <h2 class="userName">Jermaine Lamarr Cole</h2>
+            <p>January 28, 1985</p>
+        </ion-item>
+      </ion-list>
+      <ion-list class="menu-items " style="width:63%"> 
+            
+            <ion-item  menuClose ion-item *ngFor="let p of pages;let i=index" (click)="openPage(p)"><!-- 循环菜单列表-->
+              
+              <span class="menu-title cssf603b67525fc8" >{{p.title}}</span>
+              <ion-badge item-end *ngIf="i==2" style="position: absolute;top:7px;left:85px;">99</ion-badge>
+            </ion-item>
+      </ion-list>
+  </div>
+     
+</div>
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" class="menu" (tap)="menuCloseByTap()" (swipe)="menuOpen($event)" swipeBackEnabled="false" ></ion-nav>
+

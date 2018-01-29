@@ -1,0 +1,48 @@
+page-login {
+	*{-webkit-backface-visibility: hidden;}
+	 li{list-style:none;float:left;color:#f1f1f1}
+	 ul{margin:0;padding:0}
+	.clearfix{overflow:hidden;_height:1%}
+	.log-input-item{ background-color:transparent;padding: 0;width: 75%;margin: auto;color:#fff;}
+	.log-ion-input>.text-input { padding-left:15px; }
+	.input-icon{ margin: 0 5px; }
+	.login-type-btn{width:80%;color:#fff;background-color: transparent;box-shodow:none;border:1px solid #dadada; }
+	.login-type-btn>span>i{position: absolute; left:6%;  width: 15%;line-height:3.5rem;}
+	.i-icon-phone{font-size:24px;}
+	.login-text{ letter-spacing: 1px;}
+	.hide{display:none;}
+	.cut-line-wrap{position:relative;width:65%;margin: 5% auto 0 auto;}
+	.cut-line-wrap>span{color:#f3efef}
+	.cut-line-wrap>hr{position:absolute;top:25%;width:45%;border:none;height:1px;background:#dadada}
+	.cut-right-line{right:0}
+	.log-style-wrap{ width:65%;margin: 5% auto 0 auto;}
+	.log-style-wrap>ul>li{width:33%;font-size:18px}
+	.overlay{position:absolute;width:100%;min-height:100%;z-index:2;visibility:hidden}
+	.overlay-for-no-blur{position: absolute;width: 100%; height: 100%; z-index: 2;background:#000;opacity:0.3}
+	.login-edit-box{ width:100%;position:absolute;margin:auto}
+	.sign-btn{ text-align: center;padding:5% 0}
+	.logo-box{text-align:center;margin-top:15%}
+	.blur-for-bkg{ -webkit-filter: blur(50px);filter: blur(50px);}
+
+	.btn2{position: fixed;z-index:999;height:40px;top:65%;left:10%;visibility: visible;transition:.8s}
+
+	.i1,.i2{
+		opacity:0;
+		-webkit-transform: scale(1.1)    translate3d(0,-18px, 0);
+		-moz-transform: scale(1.1)    translate3d(0,-18px, 0);
+		-ms-transform: scale(1.1)    translate3d(0,-18px, 0);
+		-o-transform: scale(1.1)    translate3d(0,-18px, 0);
+		transform: scale(1.1)    translate3d(0,-18px, 0);
+
+		-webkit-transition: opacity .6s ease-out, -webkit-transform .6s;
+		-moz-transition: opacity .6s ease-out, -moz-transform .6s;
+		-ms-transition: opacity .6s ease-out, -ms-transform .6s;
+		-o-transition: opacity .6s ease-out, -o-transform .6s;
+		transition: opacity .6s ease-out, transform .6s;
+		}
+	.login-view-back{ font-size: 40px;color:#f7f7f7;position: absolute;top:15%;left:10%}
+	.error-message{ width: 75%;margin: auto;padding: 5px 0;color: #ff6969;}
+	.submit-btn{    width: 80%; margin-left: 10%; margin-top: 10%;background-color: transparent;box-shodow:none;border:1px solid #dadada;}		
+	.button-ios.activated{background:transparent}
+	
+}	

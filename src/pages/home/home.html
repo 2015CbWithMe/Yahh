@@ -1,0 +1,157 @@
+
+<ion-header style="height:50px;z-index:5">
+  
+   <ion-item  (click)="menuOpenByTap()" style="position:absolute;width:17%;height:50px;background-color:transparent;z-index:90">
+             <ion-avatar item-start  class="home-avatar" >
+               <img src="img/j-cole-2016-abg-billboard-1548.png">
+             </ion-avatar>
+   </ion-item>
+     <ion-toolbar class="home-toolbar">
+         <ion-title class="cssf5fff5c3a5fc8">YAHH</ion-title>
+     </ion-toolbar>
+   <ion-icon class="toolbar-search" name="ios-search-outline"></ion-icon>
+ </ion-header>
+ 
+ <ion-content class="home-wrap show-page"  (swipe)="menuClose($event)">
+  <ion-refresher (ionRefresh)="doRefresh($event)" pullMax='500'>
+    <ion-refresher-content pullingIcon="none"
+                                      pullingText=""
+                                      refreshingSpinner="none"
+                                      refreshingText=""></ion-refresher-content>
+</ion-refresher> 
+      <!-- 首页轮播图  s-->
+              <!-- <div ion-fixed  style="width:100%"> -->
+                   <div class="change" style="position:fixed;top:50px;width:100%;height:240px;background:#000;z-index:999"> </div>
+                       <div class="change2" style="position:fixed;top:50px;width:100%;height:240px;background:#000;z-index:999">
+                             <div class="y-r" style="width:103px;height:30px;background-color:red;position:relative;top:40%;margin:auto">
+                               <div class="text-Y" style="position:absolute;left:15px">
+                                   <span class="y-1" style="left:-20px ;top:-10px"></span>
+                                   <span class="y-2" style="left:-5px;top:-5px"></span>
+                                   <span class="y-3" style="left:20px;top:-3px;width:10px"></span>
+                               </div>
+                               <div class="text-A" style="position:absolute;left:30px;">
+                                   <span class="A-1" style="width: 17px;top :-20px;left:-15px"></span>
+                                   <span class="A-2" style="width: 17px;left:30px;top:-15px"></span>
+                                   <span class="A-3" style="left:25px;top:-25px;"></span> 
+                               </div>
+                               <div class="text-H" style="position:absolute;left:44px;">
+                                   <span class="H-1" style="width: 17px;left:45px;top:-10px"></span>
+                                   <span class="H-2" style="width: 17px;top:-20px;left:30px"></span>
+                                   <span class="H-3" style="left:80px;top:-5px"></span>
+                               </div>
+                               <div class="text-H2" style="position:absolute;left:60px;">
+                                   <span class="H2-1" style="width: 17px;left:45px;top:5px"></span>
+                                   <span class="H2-2" style="width: 17px;left:-30px;top:-10px"></span>
+                                   <span class="H2-3" style="left:55px;top:-15px"></span>
+                               </div>
+                           </div>
+                     </div>
+                  <ion-slides (ionSlideDidChange)="slideChanged()" pager  loop="true" speed="1000"  autoplay="3000" class="home-slides">
+                      
+                    <ion-slide>
+                      <img src="img/b1.jpg" alt="">
+                      <p class="banner-title">Chris brown 个人记录片谈 Rihanna</p>
+                    </ion-slide>
+  
+                    <ion-slide>
+                      <img src="img/b2.jpg" alt="">
+                      <p class="banner-title">Kendrick Lamer,自始至今</p>
+                    </ion-slide>
+  
+                    <ion-slide>
+                      <img src="img/b3.jpg" alt="">
+                      <p class="banner-title">Forest Hills Drive Live - J.cole</p>
+                    </ion-slide>
+                    <ion-slide> 
+                      <img src="img/b4.jpg" alt=""> 
+                      <p class="banner-title"> YEEZY SEASON6 发布会</p>
+                    </ion-slide>   
+                    <ion-slide>
+                      <img src="img/b5.png" alt="">
+                      <p class="banner-title"> YEEZY BOOST 320V2 纯白新款</p>
+                    </ion-slide>
+                </ion-slides> 
+              <!-- </div> -->
+                 <div class="home-list">
+                  <ion-list>
+                    <ion-item *ngFor="let i of items">{{i}}</ion-item>
+                  </ion-list>
+                 
+                  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+                    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+                  </ion-infinite-scroll>
+                   <!-- <ion-card>
+                     <img src="img/b5.png"/>
+                     <ion-card-content>
+                       <ion-card-title class="cssf600a7ac95fc8">
+                         Nine Inch Nails Live
+                         </ion-card-title>
+                       <p class="cssf6005bb935fc8">
+                         The most popular industrial group ever, and largely
+                         responsible for bringing the music to a mass audi  qence.
+                       </p>
+                     </ion-card-content>
+                   </ion-card>
+                   <ion-card>
+                     <img src="img/b4.jpg"/>
+                     <ion-card-content>
+                       <ion-card-title>
+                         Nine Inch Nails Live
+                         </ion-card-title>
+                       <p>
+                         The most popular industrial group ever, and largely
+                         responsible for bringing the music to a mass audience.
+                       </p>
+                     </ion-card-content>
+                   </ion-card>
+                   <ion-card>
+                     <img src="img/b4.jpg"/>
+                     <ion-card-content>
+                       <ion-card-title>
+                         Nine Inch Nails Live
+                         </ion-card-title>
+                       <p>
+                         The most popular industrial group ever, and largely
+                         responsible for bringing the music to a mass audience.
+                       </p>
+                     </ion-card-content>
+                   </ion-card>
+                   <ion-card>
+                     <img src="img/b4.jpg"/>
+                     <ion-card-content>
+                       <ion-card-title>
+                         Nine Inch Nails Live
+                         </ion-card-title>
+                       <p>
+                         The most popular industrial group ever, and largely
+                         responsible for bringing the music to a mass audience.
+                       </p>
+                     </ion-card-content>
+                   </ion-card>
+                   <ion-card>
+                    <img src="img/b4.jpg"/>
+                    <ion-card-content>
+                      <ion-card-title>
+                        Nine Inch Nails Live
+                        </ion-card-title>
+                      <p>
+                        The most popular industrial group ever, and largely
+                        responsible for bringing the music to a mass audience.
+                      </p>
+                    </ion-card-content>
+                  </ion-card> -->
+                  <p class="loadMore">LoadMore</p>
+                 </div>
+    
+
+     <!-- 首页轮播图  e-->
+ 
+     <!-- 内容列表  s-->
+     <!-- <ion-content class="home-list"  style="position:absolute;top:300px">
+         
+         
+     </ion-content> -->
+    <!-- 内容列表  e-->
+    
+  </ion-content>
+ 

@@ -1,0 +1,60 @@
+
+<!--background video for login page-->
+
+<ion-content class="bkg-video-wrap" style="width:100%;height:100%;position:absolute;z-index:-1" overflow-scroll="true">
+	<video src="video/clip6.mp4" class="bkg-video" id="video"  muted  webkit-playsinline></video>
+		
+</ion-content>
+ <div class="overlay-for-no-blur">	</div> 
+
+<!--init login view-->
+<div style="position:absolute;width:100%;text-align:center;top:70%;z-index:5">
+			<!--<div class="sign-btn" >
+			 <button  ion-button color="light" outline style="width:60%" class="btn cssb64f504da5fc8">sign in</button>
+			</div>-->
+			<div class="cut-line-wrap"><hr><span class="cssf603b67525fc8" style="font-size:16px">o r</span><hr class="cut-right-line"></div>
+			<div class="log-style-wrap clearfix">
+				<ul class="clearfix">
+					<li><i class="fa fa-weixin" aria-hidden="true" ></i></li>
+					<li><i class="fa fa-qq" aria-hidden="true"></i></li>
+					<li><i class="fa fa-envelope" aria-hidden="true"></i></li>
+				</ul>
+			</div>
+</div>	
+
+<!--phone number login view-->
+<div class="overlay ">
+
+		<div class="login-edit-box">
+			 <ion-icon name="arrow-round-back"  (click)="fadeDown()" class="login-view-back"></ion-icon>
+			<div class="logo-box">
+				<span class="cssf603b67525fc8" style="font-size: 3rem; color: #fff;">YAHH</span>
+			  <!-- <h1>YEE<img src="img/01B5-500x500.png" alt="" style="width:16.55px;padding: 1px 1px;margin: 0 2px;">Y</h1> -->
+			</div>
+		<form [formGroup]="myForm" (ngSubmit)="login(myForm.value)" novalidate>
+			 <ion-item class="log-input-item i1" [class.error]="!phoneNum.valid && phoneNum.touched" >
+				<ion-label floating style="color:#f1f1f1" class="cssf603b67525fc8">Phone Number</ion-label>
+				<ion-input type="text"  clearInput=true formControlName="phoneNum" class="log-ion-input p-num-inp"></ion-input>
+			  </ion-item>	
+			  <div *ngIf="phoneNum.hasError('required') && phoneNum.touched" class="error-message">yo~ 手机号是必须的！</div>
+			  <div *ngIf="(phoneNum.hasError('minlength')) && phoneNum.touched" class="error-message">yo~ 你太短了！</div>
+			 <div *ngIf="(phoneNum.hasError('maxlength')) && phoneNum.touched" class="error-message">yo~ 手机号11位，这是常识</div>
+			 <ion-item class="log-input-item i2" [class.error]="!passWord.valid && passWord.touched">
+				<ion-label floating style="color:#f1f1f1" class="cssf603b67525fc8">Password</ion-label>
+				<ion-input type="password"  clearInput=true formControlName="passWord" class="log-ion-input"></ion-input>
+			</ion-item> 
+			 <div *ngIf="passWord.hasError('required') && passWord.touched" class="error-message">yo~ 密码是必须的！</div>
+			 <div *ngIf="passWord.hasError('minlength') && passWord.touched" class="error-message">yo~ 给6位数能怎么的！</div>
+			<!-- <button ion-button icon-only class="submit-btn" type="submit">sign up</button> -->
+			<button type="button" [@fadeUp]="fadeState" (click)="fadeUp()" color="light" class="login-type-btn btn btn2"  ion-button icon-only>
+					<i class="fa fa-mobile-phone i-icon-phone"></i>
+					<p class="cssf603b67525fc8 login-text" style="margin:0" >Sign Up with phone</p>
+			</button>
+		</form>
+		<!-- cssb64f504da5fc8  -->
+	 </div>
+	
+</div>
+
+			
+ 

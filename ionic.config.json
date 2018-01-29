@@ -1,0 +1,8 @@
+{
+  "name": "cbe",
+  "app_id": "5f3358dc",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
